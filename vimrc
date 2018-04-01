@@ -11,24 +11,23 @@ set title
 set background=dark
 
 "2tab
-set tabstop=2
+set tabstop=4
 
 "tab -> half space
 set expandtab
 
 "autotab -> 4tab
 set shiftwidth=4
-
-"set smartindent
+set smartindent
 
 "set list
 
 set cursorline
+set cursorcolumn
 
 set showmatch
 
 set laststatus=2
-
 
 set incsearch " インクリメンタルサーチ. １文字入力毎に検索を行う
 set ignorecase " 検索パターンに大文字小文字を区別しない
