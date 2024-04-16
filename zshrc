@@ -59,7 +59,12 @@ autoload -Uz compinit
 compinit -u
 
 # rm -> mv trash
-alias rm='rmtrash'
+# alias rm='rmtrash'
+
+# 202404 use trash as rmtrash is deplicated
+if type trash > /dev/null 2>&1; then
+    alias rm='trash -F'
+fi
 
 # docker aliases
 alias docker-stop-all='docker stop $(docker ps -q)'
@@ -81,6 +86,12 @@ export PATH=$PATH:/usr/local/sbin
 export PATH=$PATH:/usr/local/bin
 
 export PATH=$PATH:${0:A:h}/google-cloud-sdk/bin
+
+# if use nodenv
+export PATH="$HOME/.nodenv/bin:$PATH"
+eval "$(nodenv init -)"
+
+# if use ndenv
 export PATH=$PATH:$HOME/.ndenv/bin
 eval "$(ndenv init -)"
 
